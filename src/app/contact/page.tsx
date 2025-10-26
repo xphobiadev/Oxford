@@ -56,9 +56,9 @@ export default function ContactPage() {
           <div className="campus-hero-content">
             <div className="campus-hero-icon">📧</div>
             <h1>Contact Us</h1>
-            <p className="campus-hero-location">We're Here to Help</p>
+            <p className="campus-hero-location">We&apos;re Here to Help</p>
             <p className="campus-hero-description">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     Message Sent Successfully!
                   </h3>
                   <p style={{ color: 'var(--gray-600)' }}>
-                    Thank you for contacting us. We'll get back to you soon.
+                    Thank you for contacting us. We&apos;ll get back to you soon.
                   </p>
                 </div>
               ) : (
@@ -215,7 +215,7 @@ export default function ContactPage() {
                     <span style={{ fontSize: '1.5rem' }}>📞</span>
                     <div>
                       <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--gray-900)' }}>Phone</strong>
-                      <a href="tel:+15551234567" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>
+                      <a href="tel:+15551234567" className="contact-phone" style={{ color: 'var(--primary-color)', textDecoration: 'none', fontSize: '1rem' }}>
                         +1 (555) 123-4567
                       </a>
                     </div>
@@ -315,6 +315,34 @@ export default function ContactPage() {
             @media (max-width: 768px) {
               div[style*="gridTemplateColumns"] {
                 grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+              }
+              div[style*="padding: 2rem"] {
+                padding: 1.5rem !important;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              div[style*="gridTemplateColumns"] {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+              }
+              div[style*="padding: 2rem"] {
+                padding: 1rem !important;
+              }
+              h2[style*="fontSize: 2rem"] {
+                font-size: 1.5rem !important;
+              }
+              h3[style*="fontSize: 1.5rem"] {
+                font-size: 1.25rem !important;
+              }
+              div[style*="width: 50px"] {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 1.25rem !important;
+              }
+              .contact-phone {
+                font-size: 0.875rem !important;
               }
             }
           `}</style>

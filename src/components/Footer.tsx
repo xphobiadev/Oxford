@@ -11,7 +11,7 @@ export default function Footer() {
             <p>
               Universal Oxford Spires is dedicated to providing world-class
               language education. With over 15 years of experience and 6
-              convenient campus locations, we've helped thousands of students
+              convenient campus locations, we&apos;ve helped thousands of students
               achieve their language learning goals.
             </p>
           </div>

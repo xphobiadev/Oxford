@@ -70,7 +70,7 @@ export default function EnrollmentModal({
           <div className="success-message">
             <div className="success-icon">✓</div>
             <h2>Enrollment Request Sent!</h2>
-            <p>Thank you for your interest. We'll contact you shortly to confirm your enrollment with {teacherName}.</p>
+            <p>Thank you for your interest. We&apos;ll contact you shortly to confirm your enrollment with {teacherName}.</p>
           </div>
         ) : (
           <>

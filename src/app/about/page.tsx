@@ -32,11 +32,11 @@ export default function AboutPage() {
               </p>
               
               <p style={{ fontSize: '1.125rem', color: 'var(--gray-600)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                Our journey has been marked by innovation, dedication, and an unwavering commitment to student success. We've expanded our offerings from 3 languages to 12, assembled a team of over 50 expert instructors from around the world, and developed cutting-edge teaching methodologies that blend traditional excellence with modern technology.
+                Our journey has been marked by innovation, dedication, and an unwavering commitment to student success. We&apos;ve expanded our offerings from 3 languages to 12, assembled a team of over 50 expert instructors from around the world, and developed cutting-edge teaching methodologies that blend traditional excellence with modern technology.
               </p>
 
               <p style={{ fontSize: '1.125rem', color: 'var(--gray-600)', lineHeight: '1.8' }}>
-                Today, we're proud to be recognized as one of the leading language academies in the region, with a 95% student satisfaction rate and countless success stories of students who have achieved their personal and professional goals through language learning.
+                Today, we&apos;re proud to be recognized as one of the leading language academies in the region, with a 95% student satisfaction rate and countless success stories of students who have achieved their personal and professional goals through language learning.
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
               <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>👁️</div>
               <h3>Our Vision</h3>
               <p>
-                To be the world's most trusted and innovative language academy, recognized for transforming lives through education. We envision a future where language barriers no longer limit opportunities, and where our graduates serve as ambassadors of cultural understanding worldwide.
+                To be the world&apos;s most trusted and innovative language academy, recognized for transforming lives through education. We envision a future where language barriers no longer limit opportunities, and where our graduates serve as ambassadors of cultural understanding worldwide.
               </p>
             </div>
           </div>

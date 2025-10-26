@@ -1286,6 +1286,28 @@ nav a.active::after {
   margin-bottom: var(--space-lg);
 }
 
+/* Dark mode fixes for teachers */
+[data-theme="dark"] .teacher-photo {
+  background: linear-gradient(135deg, var(--gray-800), var(--gray-900));
+}
+
+[data-theme="dark"] .teacher-bio {
+  color: var(--gray-400);
+}
+
+[data-theme="dark"] .teacher-specialization {
+  color: var(--gray-400);
+}
+
+[data-theme="dark"] .teacher-stats {
+  border-top: 1px solid var(--gray-700);
+  border-bottom: 1px solid var(--gray-700);
+}
+
+[data-theme="dark"] .teacher-stats .stat-label {
+  color: var(--gray-400);
+}
+
 /* ============================================
    BRANCH INFO BANNER
    ============================================ */
@@ -1760,8 +1782,49 @@ footer {
 /* ============================================
    RESPONSIVE STYLES
    ============================================ */
+
+/* Tablet and below (1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .campuses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .teachers-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .campus-row.row-tier-1 {
+    gap: 80px;
+  }
+
+  .campus-row.row-tier-2 {
+    gap: 120px;
+  }
+}
+
+/* Mobile landscape and tablet portrait (768px) */
 @media (max-width: 768px) {
   /* Header */
+  .header-top {
+    font-size: 0.75rem;
+  }
+
   .header-top .container {
     flex-direction: column;
     gap: var(--space-sm);
@@ -1774,8 +1837,17 @@ footer {
     margin: var(--space-xs) 0;
   }
 
+  .nav-container {
+    padding: var(--space-sm) 0;
+  }
+
+  .logo-section {
+    gap: var(--space-sm);
+  }
+
   .mobile-menu-toggle {
     display: block;
+    color: var(--text-primary);
   }
 
   nav {
@@ -1791,38 +1863,60 @@ footer {
   }
 
   nav.active {
-    max-height: 400px;
+    max-height: 500px;
   }
 
   nav ul {
     flex-direction: column;
     padding: var(--space-lg);
     gap: 0;
+    background: var(--legend-navy);
   }
 
   nav ul li {
     padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
   }
 
   nav ul li:last-child {
     border-bottom: none;
   }
 
+  nav a {
+    display: block;
+  }
+
   /* Hero */
+  .hero {
+    padding: 4rem 0;
+  }
+
   .hero h2,
   .campus-hero h1 {
     font-size: 2rem;
+    line-height: 1.2;
   }
 
   .hero p,
   .campus-hero-description {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .cta-buttons,
   .campus-hero-actions {
     flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons .btn,
+  .campus-hero-actions .btn {
+    width: 100%;
+  }
+
+  .campus-hero {
+    padding: 3rem 0;
   }
 
   .campus-hero-icon {
@@ -1830,8 +1924,26 @@ footer {
   }
 
   /* Section Headers */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  /* Sections */
+  .branches-section,
+  .campuses-grid-section,
+  .languages-section,
+  .stats-section,
+  .reviews-section,
+  .team-section {
+    padding: 3rem 0;
   }
 
   /* Grids */
@@ -1841,6 +1953,7 @@ footer {
   .reviews-grid,
   .team-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-xl);
   }
 
   .stats-grid {
@@ -1858,24 +1971,36 @@ footer {
   }
 
   .campus-diagram {
-    min-height: 1000px;
+    min-height: auto;
     padding-top: 1rem;
   }
 
+  /* Hide complex SVG lines on mobile, show simplified version */
+  .connection-lines {
+    display: none;
+  }
+
+  .campus-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .campus-row.row-main {
-    margin-bottom: 100px;
+    margin-bottom: 3rem;
   }
 
   .campus-row.row-tier-1 {
-    margin-bottom: 100px;
-    gap: 60px;
-    padding: 0 2%;
-    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    padding: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
   }
 
   .campus-row.row-tier-2 {
-    gap: 100px;
-    flex-wrap: wrap;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    flex-direction: column;
   }
 
   .campus-node-circle {
@@ -1884,11 +2009,69 @@ footer {
   }
 
   .campus-node-circle.main {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     box-shadow: 0 15px 40px rgba(37, 99, 235, 0.35),
                 0 0 0 6px rgba(255, 255, 255, 0.8),
                 0 0 0 10px rgba(37, 99, 235, 0.1);
+  }
+
+  .campus-node-circle.sub {
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2),
+                0 0 0 4px rgba(255, 255, 255, 0.9),
+                0 0 0 8px rgba(37, 99, 235, 0.08);
+  }
+
+  .campus-node-icon {
+    font-size: 3rem;
+  }
+
+  .campus-node-circle.main .campus-node-icon {
+    font-size: 3.5rem;
+  }
+
+  .campus-node-info {
+    max-width: 180px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .campus-node-info h3 {
+    font-size: 1.125rem;
+  }
+
+  .campus-node-info h4 {
+    font-size: 1rem;
+  }
+
+  .campus-location {
+    font-size: 0.875rem;
+  }
+
+  /* Cards */
+  .campus-card,
+  .language-card,
+  .teacher-card {
+    padding: var(--space-xl);
+  }
+
+  .campus-icon,
+  .language-icon {
+    font-size: 3.5rem;
+  }
+
+  .language-icon {
+    min-height: 80px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.938rem;
+  }
+
+  .btn-large {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
   }
 
   .campus-node-circle.sub {
@@ -1982,6 +2165,21 @@ footer {
 }
 
 @media (max-width: 480px) {
+  /* Container */
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Header */
+  .header-top {
+    font-size: 0.688rem;
+    padding: var(--space-xs) 0;
+  }
+
+  .logo-section {
+    gap: var(--space-sm);
+  }
+
   .logo {
     width: 50px;
     height: 50px;
@@ -1989,27 +2187,240 @@ footer {
   }
 
   .school-name h1 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .school-name p {
-    font-size: 0.75rem;
+    font-size: 0.688rem;
+  }
+
+  /* Hero */
+  .hero,
+  .campus-hero {
+    padding: 2.5rem 0;
   }
 
   .hero h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero p {
+    font-size: 0.938rem;
+    margin-bottom: var(--space-xl);
   }
 
   .campus-hero h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
+  .campus-hero-icon {
+    font-size: 3rem;
+  }
+
+  .campus-hero-location {
+    font-size: 1rem;
+  }
+
+  .campus-hero-description {
+    font-size: 1rem;
+  }
+
+  /* Section Headers */
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.938rem;
+  }
+
+  /* Sections */
+  .branches-section,
+  .campuses-grid-section,
+  .languages-section,
+  .stats-section,
+  .reviews-section,
+  .team-section,
+  .campus-info-section {
+    padding: 2rem 0;
+  }
+
+  /* Stats */
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .stat-number {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+  }
+
+  /* Campus Diagram */
+  .campus-diagram {
+    min-height: auto;
+  }
+
+  .campus-row.row-main {
+    margin-bottom: 2rem;
+  }
+
+  .campus-row.row-tier-1 {
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+  }
+
+  .campus-row.row-tier-2 {
+    gap: 1.5rem;
+  }
+
+  .campus-node {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .campus-node-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .campus-node-circle.main {
+    width: 120px;
+    height: 120px;
+  }
+
+  .campus-node-icon {
+    font-size: 2.75rem;
+  }
+
+  .campus-node-circle.main .campus-node-icon {
+    font-size: 3.25rem;
+  }
+
+  .campus-node-info {
+    max-width: 100%;
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .campus-node-info h3 {
+    font-size: 1.125rem;
+  }
+
+  .campus-node-info h4 {
+    font-size: 1rem;
+  }
+
+  .campus-location {
+    font-size: 0.875rem;
+  }
+
+  .campus-badge {
+    font-size: 0.688rem;
+    padding: 0.25rem 0.625rem;
+  }
+
+  /* Cards */
+  .campus-card,
+  .language-card,
+  .teacher-card,
+  .review-card,
+  .team-member {
+    padding: var(--space-lg);
+  }
+
+  .campus-card h3,
+  .language-card h3 {
+    font-size: 1.375rem;
+  }
+
+  .campus-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .language-icon {
+    font-size: 3rem;
+    min-height: 60px;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Campus Info Grid */
+  .campus-info-card {
+    padding: var(--space-lg);
+  }
+
+  .campus-info-card h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Teacher Cards */
+  .teacher-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .teacher-photo {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+  }
+
+  .teacher-stats {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.563rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.938rem;
+  }
+
+  /* Reviews */
+  .review-card {
+    padding: var(--space-lg);
+  }
+
+  .reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .reviewer-info h4 {
+    font-size: 1rem;
+  }
+
+  .reviewer-info p {
+    font-size: 0.813rem;
+  }
+
+  .review-text {
+    font-size: 0.875rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    gap: var(--space-lg);
+  }
+
+  .footer-section h3 {
+    font-size: 1.125rem;
+  }
+
+  .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
 }
 

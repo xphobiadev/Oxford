@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { getAllCampuses } from '@/data/schoolData';
 import CampusDiagram from '@/components/CampusDiagram';
 
 export default function Home() {
@@ -44,7 +43,7 @@ export default function Home() {
     counters.forEach((counter) => observer.observe(counter));
   }, []);
 
-  const campuses = getAllCampuses();
+  // Campuses are rendered via CampusDiagram component
 
   return (
     <>
@@ -113,7 +112,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "The English program here transformed my career. The teachers are exceptional and the curriculum is perfectly designed for business professionals. Highly recommend!"
+                &quot;The English program here transformed my career. The teachers are exceptional and the curriculum is perfectly designed for business professionals. Highly recommend!&quot;
               </p>
             </div>
             <div className="review-card">
@@ -126,7 +125,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "I passed my IELTS exam with a score of 8.0 thanks to Dr. Johnson's excellent preparation course. The facilities at North Campus are top-notch!"
+                &quot;I passed my IELTS exam with a score of 8.0 thanks to Dr. Johnson&apos;s excellent preparation course. The facilities at North Campus are top-notch!&quot;
               </p>
             </div>
             <div className="review-card">
@@ -139,7 +138,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "Learning Spanish with Prof. María García was an amazing experience. Her teaching style is engaging and I can now confidently communicate during my travels."
+                &quot;Learning Spanish with Prof. María García was an amazing experience. Her teaching style is engaging and I can now confidently communicate during my travels.&quot;
               </p>
             </div>
             <div className="review-card">
@@ -152,7 +151,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "The French course exceeded my expectations. Sophie Dubois's cultural insights made learning the language so much more meaningful. East Campus is very convenient!"
+                &quot;The French course exceeded my expectations. Sophie Dubois&apos;s cultural insights made learning the language so much more meaningful. East Campus is very convenient!&quot;
               </p>
             </div>
             <div className="review-card">
@@ -165,7 +164,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "Dr. Mueller's technical German course was exactly what I needed for my job in Germany. Professional, highly effective, and great parking at West Campus!"
+                &quot;Dr. Mueller&apos;s technical German course was exactly what I needed for my job in Germany. Professional, highly effective, and great parking at West Campus!&quot;
               </p>
             </div>
             <div className="review-card">
@@ -178,7 +177,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "Learning Mandarin with Li Wei opened up new business opportunities for me in China. Excellent teacher and the Central Campus location is perfect!"
+                &quot;Learning Mandarin with Li Wei opened up new business opportunities for me in China. Excellent teacher and the Central Campus location is perfect!&quot;
               </p>
             </div>
             <div className="review-card">
@@ -191,7 +190,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "Yuki Tanaka's Japanese classes are incredible! I went from zero knowledge to passing JLPT N3 in just one year. The teaching methods are very effective."
+                &quot;Yuki Tanaka&apos;s Japanese classes are incredible! I went from zero knowledge to passing JLPT N3 in just one year. The teaching methods are very effective.&quot;
               </p>
             </div>
             <div className="review-card">
@@ -204,7 +203,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "Giulia Romano's Italian Through Cooking class is genius! I learned Italian while mastering authentic Italian recipes. Best language class ever!"
+                &quot;Giulia Romano&apos;s Italian Through Cooking class is genius! I learned Italian while mastering authentic Italian recipes. Best language class ever!&quot;
               </p>
             </div>
             <div className="review-card">
@@ -217,7 +216,7 @@ export default function Home() {
               </div>
               <div className="rating">★★★★★</div>
               <p className="review-text">
-                "Dr. Ahmed Al-Rahman's Arabic course helped me communicate with patients effectively. His patient teaching style made learning Arabic script easy!"
+                &quot;Dr. Ahmed Al-Rahman&apos;s Arabic course helped me communicate with patients effectively. His patient teaching style made learning Arabic script easy!&quot;
               </p>
             </div>
           </div>

@@ -1,22 +1,20 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../styles/themeToggle.css';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    // Check localStorage and system preference
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    setTheme(initialTheme);
-    document.documentElement.setAttribute('data-theme', initialTheme);
-  }, []);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    // Initialize theme from localStorage or system preference (client-side only)
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+      if (savedTheme) return savedTheme;
+      
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
+    }
+    return 'light';
+  });
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -24,11 +22,6 @@ export default function ThemeToggle() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
   };
-
-  // Avoid hydration mismatch
-  if (!mounted) {
-    return <div className="theme-toggle-placeholder" />;
-  }
 
   return (
     <button
