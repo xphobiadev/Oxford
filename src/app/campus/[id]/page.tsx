@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getCampusById, getAllLanguages } from '@/data/schoolData';
 import { notFound } from 'next/navigation';
 
@@ -73,7 +74,17 @@ export default async function CampusPage({ params }: { params: Promise<{ id: str
                 href={`/language/${language.id}`}
                 className="language-card"
               >
-                <div className="language-icon">{language.icon}</div>
+                <div className="language-icon">
+                  <Image 
+                    src={language.icon} 
+                    alt={`${language.name} flag`}
+                    width={160}
+                    height={120}
+                    style={{ borderRadius: '8px', objectFit: 'cover' }}
+                    unoptimized
+                    loading="lazy"
+                  />
+                </div>
                 <h3>{language.name}</h3>
                 <p>{language.description}</p>
                 <button className="btn btn-primary">View Teachers</button>

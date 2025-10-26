@@ -24,6 +24,8 @@ export default async function LanguagePage({ params }: { params: Promise<{ lang:
               width={120}
               height={90}
               style={{ borderRadius: '8px', objectFit: 'cover' }}
+              unoptimized
+              priority
             />
             {language.name} Teachers
           </h2>

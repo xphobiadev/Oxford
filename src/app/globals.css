@@ -1783,6 +1783,114 @@ footer {
    RESPONSIVE STYLES
    ============================================ */
 
+/* Extra Large Screens (1920px+) - 4K Displays */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .hero h2 {
+    font-size: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Large Desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Standard Desktop (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Small Desktop / Large Laptop (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .campuses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* Tablet Landscape / Medium Devices (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .campuses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .teachers-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campus-row.row-tier-1 {
+    gap: 80px;
+  }
+
+  .campus-row.row-tier-2 {
+    gap: 100px;
+  }
+}
+
+/* Tablet Portrait / Small Tablets (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+
+  .hero h2 {
+    font-size: 2.25rem;
+  }
+
+  .campuses-grid,
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teachers-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Tablet and below (1024px) */
 @media (max-width: 1024px) {
   .container {
@@ -2164,6 +2272,101 @@ footer {
   }
 }
 
+/* Large Phones (540px - 599px) */
+@media (min-width: 540px) and (max-width: 599px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .campuses-grid,
+  .languages-grid,
+  .teachers-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Standard Phones (414px - 539px) - iPhone Plus, Pixel, etc */
+@media (min-width: 414px) and (max-width: 539px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .hero h2 {
+    font-size: 1.875rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.625rem;
+  }
+
+  .campus-node-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .campus-node-circle.main {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Medium Phones (375px - 413px) - iPhone X/11/12/13 */
+@media (min-width: 375px) and (max-width: 413px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+  }
+}
+
+/* Small Phones (320px - 374px) - iPhone SE, older Android */
+@media (min-width: 320px) and (max-width: 374px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.375rem;
+  }
+
+  .campus-node-circle {
+    width: 85px;
+    height: 85px;
+  }
+
+  .campus-node-circle.main {
+    width: 105px;
+    height: 105px;
+  }
+
+  .btn {
+    font-size: 0.813rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   /* Container */
   .container {
@@ -2459,6 +2662,114 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION SUPPORT
+   ============================================ */
+
+/* Phone Landscape (568px - 926px height in landscape) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .campus-diagram {
+    min-height: auto;
+  }
+
+  .campus-row.row-main {
+    margin-bottom: 2rem;
+  }
+
+  .campus-row.row-tier-1,
+  .campus-row.row-tier-2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  nav.active {
+    max-height: 350px;
+  }
+}
+
+/* Tablet Landscape Specific */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    padding: 0 var(--space-xl);
+  }
+
+  .campuses-grid,
+  .languages-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   FOLDABLE DEVICES SUPPORT
+   ============================================ */
+
+/* Samsung Z Fold (unfolded: 884px x 1104px) */
+@media (min-width: 800px) and (max-width: 900px) {
+  .container {
+    max-width: 850px;
+  }
+
+  .languages-grid,
+  .campuses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Galaxy Z Fold (folded: 280px) */
+@media (max-width: 280px) {
+  .container {
+    padding: 0 var(--space-xs);
+  }
+
+  .hero h2 {
+    font-size: 1.25rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.125rem;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .campus-node-circle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .campus-node-circle.main {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+/* ============================================
+   HIGH DPI / RETINA DISPLAYS
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimizations for high-resolution displays */
+  .campus-node-circle,
+  .language-icon img,
+  .teacher-photo {
+    image-rendering: -webkit-optimize-contrast;
+  }
 }
 
 /* ============================================

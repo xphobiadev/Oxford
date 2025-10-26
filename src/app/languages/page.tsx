@@ -39,6 +39,8 @@ export default function LanguagesPage() {
                       width={160}
                       height={120}
                       style={{ borderRadius: '8px', objectFit: 'cover' }}
+                      unoptimized
+                      loading="lazy"
                     />
                   </div>
                   <h3>{language.name}</h3>
