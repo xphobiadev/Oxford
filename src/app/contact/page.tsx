@@ -67,13 +67,13 @@ export default function ContactPage() {
       {/* Contact Form & Info Section */}
       <section className="campus-info-section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="contact-grid">
             {/* Contact Form */}
-            <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}>
-              <h2 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--gray-900)' }}>
+            <div className="contact-form-card">
+              <h2 className="contact-form-title">
                 Send Us a Message
               </h2>
-              <p style={{ color: 'var(--gray-600)', marginBottom: '2rem' }}>
+              <p className="contact-form-subtitle">
                 Fill out the form below and our team will get back to you within 24 hours.
               </p>
 
@@ -197,8 +197,8 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div>
-              <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)', marginBottom: '2rem' }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1.5rem', color: 'var(--gray-900)' }}>
+              <div className="contact-info-card">
+                <h3 className="contact-info-title">
                   Contact Information
                 </h3>
                 

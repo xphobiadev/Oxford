@@ -187,3 +187,4 @@ npm start
 - **Windows Development**: This project was developed on Windows. File paths use backslashes in some tooling outputs but forward slashes in imports.
 - **No Database**: All data is static in TypeScript files. For production, consider migrating to a CMS or database.
 - **TypeScript Strict Mode**: Enabled. All new code must satisfy strict type checking.
+- **Build Cache Warning**: The "No build cache found" warning is normal for first deployments. See `BUILD_CACHE_SETUP.md` for CI/CD cache configuration.

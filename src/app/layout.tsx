@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: 'Universal Oxford Spires offers world-class language education across 6 convenient campuses. Learn English, Spanish, French, German, Chinese, Japanese, and more with expert instructors.',
   keywords: 'language school, language learning, language academy, English classes, Spanish classes, French classes, German classes, Chinese classes, Japanese classes',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
+  icons: {
+    icon: '/images/logo.jpg',
+    shortcut: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
+  },
 };
 
 export default function RootLayout({

@@ -51,13 +51,13 @@ export default function Header() {
           {/* Navigation Menu */}
           <nav className={mobileMenuOpen ? 'active' : ''}>
             <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/campuses">Our Campuses</Link></li>
-              <li><Link href="/languages">All Languages</Link></li>
-              <li><Link href="/#reviews">Reviews</Link></li>
-              <li><Link href="/#team">Our Team</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
+              <li><Link href="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link></li>
+              <li><Link href="/campuses" onClick={() => setMobileMenuOpen(false)}>Our Campuses</Link></li>
+              <li><Link href="/languages" onClick={() => setMobileMenuOpen(false)}>All Languages</Link></li>
+              <li><Link href="/#reviews" onClick={() => setMobileMenuOpen(false)}>Reviews</Link></li>
+              <li><Link href="/#team" onClick={() => setMobileMenuOpen(false)}>Our Team</Link></li>
+              <li><Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
             </ul>
           </nav>
 
