@@ -217,7 +217,13 @@ src/app/globals.css
 
 ```typescript
 // src/app/layout.tsx
-viewport: 'width=device-width, initial-scale=1, maximum-scale=5'
+import type { Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 ```
 
 This ensures:
@@ -225,6 +231,7 @@ This ensures:
 - Prevents unwanted zoom on input focus
 - Allows user pinch-to-zoom up to 5x
 - WCAG 2.1 Level AA compliant
+- Next.js 16+ compatible (separate viewport export)
 
 ## Known Device Quirks
 
