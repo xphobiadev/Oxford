@@ -69,7 +69,7 @@ export default function ContactPage() {
         <div className="container">
           <div className="contact-grid">
             {/* Contact Form */}
-            <div className="contact-form-card">
+            <div className="contact-form-card" id="contact-form">
               <h2 className="contact-form-title">
                 Send Us a Message
               </h2>
@@ -206,15 +206,15 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
                     <span style={{ fontSize: '1.5rem' }}>📍</span>
                     <div>
-                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--gray-900)' }}>Main Office</strong>
-                      <span style={{ color: 'var(--gray-600)' }}>123 Education Street<br />Learning City, LC 12345</span>
+                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Main Office</strong>
+                      <span style={{ color: 'var(--text-muted)' }}>123 Education Street<br />Learning City, LC 12345</span>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
                     <span style={{ fontSize: '1.5rem' }}>📞</span>
                     <div>
-                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--gray-900)' }}>Phone</strong>
+                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Phone</strong>
                       <a href="tel:+15551234567" className="contact-phone" style={{ color: 'var(--primary-color)', textDecoration: 'none', fontSize: '1rem' }}>
                         +1 (555) 123-4567
                       </a>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1rem' }}>
                     <span style={{ fontSize: '1.5rem' }}>✉️</span>
                     <div>
-                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--gray-900)' }}>Email</strong>
+                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Email</strong>
                       <a href="mailto:info@globallanguage.edu" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>
                         info@globallanguage.edu
                       </a>
@@ -234,8 +234,8 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                     <span style={{ fontSize: '1.5rem' }}>⏰</span>
                     <div>
-                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--gray-900)' }}>Office Hours</strong>
-                      <span style={{ color: 'var(--gray-600)' }}>
+                      <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Office Hours</strong>
+                      <span style={{ color: 'var(--text-muted)' }}>
                         Monday - Friday: 8:00 AM - 8:00 PM<br />
                         Saturday: 9:00 AM - 5:00 PM<br />
                         Sunday: Closed
@@ -245,11 +245,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div style={{ background: 'white', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1.5rem', color: 'var(--gray-900)' }}>
+              <div style={{ background: 'var(--card-bg)', padding: '2rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>
                   Follow Us
                 </h3>
-                <p style={{ color: 'var(--gray-600)', marginBottom: '1.5rem' }}>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
                   Stay connected with us on social media for updates, tips, and community events.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem' }}>
@@ -349,8 +349,82 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Choose Campus Section */}
+      <section className="campus-info-section" style={{ background: 'var(--bg-primary)' }}>
+        <div className="container">
+          <div className="section-header">
+            <h2>🏫 Choose Your Campus</h2>
+            <p>Select from our six convenient locations across the country</p>
+          </div>
+
+          <div className="campuses-grid">
+            {campuses.map((campus) => (
+              <div key={campus.id} className="campus-card" style={{ position: 'relative' }}>
+                <div className="campus-icon">{campus.icon}</div>
+                <h3>{campus.name}</h3>
+                <p className="campus-location" style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem' }}>
+                  📍 {campus.location}
+                </p>
+                <p className="campus-description" style={{ marginBottom: '1rem' }}>
+                  {campus.description}
+                </p>
+                
+                {/* Campus Quick Info */}
+                <div style={{ 
+                  background: 'var(--gray-50)', 
+                  padding: '1rem', 
+                  borderRadius: 'var(--radius-md)', 
+                  marginBottom: '1rem',
+                  textAlign: 'left'
+                }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>Address:</strong><br />
+                    {campus.address}
+                  </p>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>Phone:</strong><br />
+                    +1 (555) 123-4567
+                  </p>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>Languages:</strong><br />
+                    {campus.allLanguages ? 'All 12 Languages Available' : 'Multiple Languages'}
+                  </p>
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <Link 
+                    href={`/campus/${campus.id}`} 
+                    className="btn btn-primary" 
+                    style={{ flex: 1 }}
+                  >
+                    View Details
+                  </Link>
+                  <a 
+                    href={`#contact-form`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const form = document.querySelector('#campus');
+                      if (form instanceof HTMLSelectElement) {
+                        form.value = campus.name;
+                        form.dispatchEvent(new Event('change', { bubbles: true }));
+                        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        form.focus();
+                      }
+                    }}
+                    className="btn btn-secondary"
+                    style={{ flex: 1 }}
+                  >
+                    Select
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Campus Locations Section */}
-      <section className="campuses-grid-section">
+      <section className="campuses-grid-section" style={{ display: 'none' }}>
         <div className="container">
           <div className="section-header">
             <h2>Visit Our Campuses</h2>
