@@ -14,6 +14,14 @@
   - Mobile Menu Toggle: order 3
 - Made logo section flex:1 to take available space
 
+### 1b. Mobile Menu Contact Link Hidden
+**Problem:** The "Contact" link (last item in navigation) was cut off and not visible in the mobile menu on phone screens.
+
+**Solution:**
+- Changed `max-height` from fixed `500px` to `100vh` (full viewport height)
+- Added `overflow-y: auto` to allow scrolling if menu items exceed viewport height
+- This ensures all 7 navigation items are accessible on any screen size
+
 ### 2. Contact Page Layout Overlap
 **Problem:** On mobile screens, the contact form and contact information sections were overlapping or not properly stacked.
 
@@ -52,7 +60,7 @@
 }
 ```
 
-#### 2. Mobile Navigation Positioning
+#### 2. Mobile Navigation Positioning & Height
 ```css
 @media (max-width: 768px) {
   nav {
@@ -66,6 +74,11 @@
     overflow: hidden;
     transition: max-height var(--transition-base);
     z-index: 999; /* Added for proper layering */
+  }
+  
+  nav.active {
+    max-height: 100vh; /* Changed from 500px to ensure all items visible */
+    overflow-y: auto; /* Allow scrolling if needed */
   }
 }
 ```
@@ -161,11 +174,18 @@
    - X icon should be visible and clickable
    - Menu should overlay page content properly
    - Theme toggle should remain visible next to menu icon
+   - **All 7 navigation items should be visible** (including "Contact" at the bottom)
 
 2. **Test interaction:**
    - Click menu links → menu should close automatically
    - Click theme toggle → should work without closing menu
    - Scroll page with menu open → menu should stay fixed at top
+   - **Scroll within menu** → should scroll smoothly if items exceed viewport height
+
+3. **Test all navigation items:**
+   - Verify Home, About Us, Our Campuses, All Languages visible
+   - Verify Reviews, Our Team visible
+   - **Verify Contact link is visible and clickable** (bottom of menu)
 
 ### Contact Page
 1. **Test on devices ≤768px width:**
